@@ -12,17 +12,21 @@ halloween.BackgroundController = function( app ) {
 };
 
 halloween.BackgroundController.prototype.initBackground = function() {
+    var container = new PIXI.Container();
+    app.stage.addChild(container);
+
     background = PIXI.Sprite.fromImage('image/background/fondo_mergeado.png');
     background2 = PIXI.Sprite.fromImage('image/background/fondo_mergeado.png');
-
-    foreground = PIXI.Sprite.fromImage('');
-    foreground2 = PIXI.Sprite.fromImage('');
-    foreground.anchor.set(0, 0.7);
+    foreground = PIXI.Sprite.fromImage(''/*'image/background/piso.png'*/);
+    foreground2 = PIXI.Sprite.fromImage(''/*'image/background/piso.png'*/);
+    foreground.anchor.set(0, 1);
     foreground.position.y = app.screen.height;
-    foreground2.anchor.set(0, 0.7);
+    foreground2.anchor.set(0, 1);
     foreground2.position.y = app.screen.height;
 
-    app.stage.addChild(background, background2, foreground, foreground2);
+    container.addChild(background, background2, foreground, foreground2);
+    //container.width = app.screen.width;
+    container.height = 500;
     //app.start();
     this.launchTicker();
 };
