@@ -3,15 +3,21 @@
  * @type {Application}
  */
 
-var AppHallowen = AppHallowen || {};
+var halloween = halloween || {};
 
-const app = new PIXI.Application();
+var app = new PIXI.Application();
 
-AppHallowen.initHalloweenApp = function () {
+halloween.initHalloweenApp = function () {
+    var renderer    = PIXI.autoDetectRenderer(window.screen.width, window.screen.height);
+    app.renderer = renderer;
+    app.start();
+    
     document.body.appendChild(app.view);
-    app.stop();
+
+
+    new halloween.characterController(app);
 };
 
-AppHallowen.AppHalloween = function AppHalloween() {
+halloween.AppHalloween = function AppHalloween() {
     return app;
 };

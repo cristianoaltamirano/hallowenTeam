@@ -10,7 +10,7 @@ halloween.Spine = function(spineData, objConfig){
     this.init( spineData, objConfig );
 }
 
-halloween.Utils.inheritPrototype(halloween.Spine, PIXI.spine.Spine);
+// halloween.Utils.inheritPrototype(halloween.Spine, PIXI.spine.Spine);
 
 halloween.Spine.prototype.init = function(spineData, objConfig){
     
