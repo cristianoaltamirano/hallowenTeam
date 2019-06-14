@@ -1,19 +1,18 @@
 /** GUILLE **/
-var LeanderMob = LeanderMob || {};
+var halloween = halloween || {};
 
-LeanderMob.Spine = function(spineData, objConfig){
+halloween.Spine = function(spineData, objConfig){
     PIXI.spine.Spine.apply( this, arguments );
 
     this._animationsDataConfig  = null;
     this._trackEntry            = {};
     this._trackCurrent          = 0;    
-
     this.init( spineData, objConfig );
 }
 
-LeanderMob.Utils.inheritPrototype(LeanderMob.Spine, PIXI.spine.Spine);
+halloween.Utils.inheritPrototype(halloween.Spine, PIXI.spine.Spine);
 
-LeanderMob.Spine.prototype.init = function(spineData, objConfig){
+halloween.Spine.prototype.init = function(spineData, objConfig){
     
     this.setScale( this.calculateScale() );
     
@@ -34,44 +33,55 @@ LeanderMob.Spine.prototype.init = function(spineData, objConfig){
 /**************************************/ 
 
 /*** Retorna el objeto de configuracion de las animaciones ***/
-LeanderMob.Spine.prototype.getDataConfig = function(){
+halloween.Spine.prototype.getDataConfig = function(){
     return this._animationsDataConfig;
 };
 
 /*** Retorna la scale del objeto ***/
-LeanderMob.Spine.prototype.getScale = function( scale ){
+halloween.Spine.prototype.getScale = function( scale ){
     this._spineObject.scale.get();
 };
 
 /*** Retorna un Array con todas las animaciones del objeto Spine ***/
-LeanderMob.Spine.prototype.getAnimations = function(){
+halloween.Spine.prototype.getAnimations = function(){
     return this.spineData.animations;
 };
 
 /*** Setea la config del objeto Spine para usarlos en las animaciones con string ***/
-LeanderMob.Spine.prototype.setDataConfig = function(data){
+halloween.Spine.prototype.setDataConfig = function(data){
     this._animationsDataConfig = data;
 };
 
 /*** Setea la scala del objecto spine claculada segun la resolución de pantalla ***/
-LeanderMob.Spine.prototype.setScale = function( scale ){
+halloween.Spine.prototype.setScale = function( scale ){
     
     if( scale[1] > -1 )
         this.scale.set( scale[1] );
 };
 
 /*** Calcula la Scala del nuevo objeto segun la resolución de pantalla ***/
-LeanderMob.Spine.prototype.calculateScale = function(){
+halloween.Spine.prototype.calculateScale = function(){
 
-    var arrayDeviceSizes = gmApi.getAvailableDeviceSizes(),
-        resolution       = gmApi.getLayoutResolutionAssets();
-    var scale            = _.filter(arrayDeviceSizes, function(e){
-                                if(e[0] == resolution) return e;
-                            });
-    return scale[0];
+    var resolution = window.screen.width;        
+    const arrayDeviceSizes = [
+            {"size": 240, "scale": 0.126},
+		    {"size": 320, "scale": 0.207},
+		    {"size": 360, "scale": 0.233},
+		    {"size": 375, "scale": 0.243},
+		    {"size": 414, "scale": 0.268},
+		    {"size": 480, "scale": 0.311},
+		    {"size": 600, "scale": 0.388},
+		    {"size": 720, "scale": 0.466},
+		    {"size": 900, "scale": 0.583},
+		    {"size": 1080, "scale": 0.70}
+        ];
+    var scale = _.filter(arrayDeviceSizes, function(e){
+                    if(e.size == resolution) return e;
+                });
+    return scale.scale;
 };
 /*** Setea el tiempo de transicion entre una animacion y otra ***/
-LeanderMob.Spine.prototype.setMix = function( config ){
+halloween.Spine.prototype.setMix = function( config ){
     var i = 0, 
         n = config.length;
 
@@ -86,15 +96,15 @@ LeanderMob.Spine.prototype.setMix = function( config ){
 /*********************************/ 
 
 /***  Publica los Listener de las animaciones ***/
-LeanderMob.Spine.prototype.addEventListener = function(){
+halloween.Spine.prototype.addEventListener = function(){
 
         this.state.addListener({
-        start:      function(entry) { pubsub.publicar( LeanderMob.AnimationSpine.ANIMATION_START , entry ); },
-        end:        function(entry) { pubsub.publicar( LeanderMob.AnimationSpine.ANIMATION_END , entry );  },        
-        complete:   function(entry) { pubsub.publicar( LeanderMob.AnimationSpine.ANIMATION_COMPLETE , entry );  },
-        event:      function(entry, event) { pubsub.publicar( LeanderMob.AnimationSpine.ANIMATION_EVENT , event.data ); },
-        dispose:    function(entry) { pubsub.publicar( LeanderMob.AnimationSpine.ANIMATION_DISPOSE , entry );  },
-        interrupted: function(entry){ pubsub.publicar( LeanderMob.AnimationSpine.ANIMATION_INTERRUPTED , entry ); }
+        start:      function(entry) { pubsub.publicar( halloween.AnimationSpine.ANIMATION_START , entry ); },
+        end:        function(entry) { pubsub.publicar( halloween.AnimationSpine.ANIMATION_END , entry );  },        
+        complete:   function(entry) { pubsub.publicar( halloween.AnimationSpine.ANIMATION_COMPLETE , entry );  },
+        event:      function(entry, event) { pubsub.publicar( halloween.AnimationSpine.ANIMATION_EVENT , event.data ); },
+        dispose:    function(entry) { pubsub.publicar( halloween.AnimationSpine.ANIMATION_DISPOSE , entry );  },
+        interrupted: function(entry){ pubsub.publicar( halloween.AnimationSpine.ANIMATION_INTERRUPTED , entry ); }
     });
 
 };
@@ -104,7 +114,7 @@ LeanderMob.Spine.prototype.addEventListener = function(){
  * String: "Nombre de Animacion" o
  * Object: {Nombre de Animacion, Loop, Delay}
  * ***/
-LeanderMob.Spine.prototype.play = function(params){
+halloween.Spine.prototype.play = function(params){
     var entry = null;
     
     if( _.isObject(params) ){
@@ -133,7 +143,7 @@ LeanderMob.Spine.prototype.play = function(params){
  * Object: {Nombre de Animacion, Loop, Delay}
  * ***/
 
-LeanderMob.Spine.prototype.forcePlay = function( params ){
+halloween.Spine.prototype.forcePlay = function( params ){
     var entry = null;
 
     if( _.isObject(params) ){
@@ -156,20 +166,20 @@ LeanderMob.Spine.prototype.forcePlay = function( params ){
 };
 
 /*** Remueve todas las animaciones cargadas en el track ***/
-LeanderMob.Spine.prototype.removeAnimations = function(){
+halloween.Spine.prototype.removeAnimations = function(){
     
     this.state.clearTracks();
     this.state.clearListeners();
 };
 
 /*** Remueve el objecto de Spine ***/
-LeanderMob.Spine.prototype.remove = function(){
+halloween.Spine.prototype.remove = function(){
     this.state.clearListeners();
     this.destroy();
 };
 
 /*** Retorna el objecto de Animacion en reproducción ***/
-LeanderMob.Spine.prototype.getCurrentAnimation = function( track ){
+halloween.Spine.prototype.getCurrentAnimation = function( track ){
     var trackIndex = ( track != undefined ) ? track : this._trackCurrent;
     return this.state.getCurrent( trackIndex );
 }
@@ -183,7 +193,7 @@ LeanderMob.Spine.prototype.getCurrentAnimation = function( track ){
  * String: "Nombre de Animacion"
  * undefined: Retorna todas las animaciones en Loop
 ***/
-LeanderMob.Spine.prototype.getLoop = function(params){
+halloween.Spine.prototype.getLoop = function(params){
    
     var loop        = [],
         arrayTracks = this.state.tracks;
@@ -209,7 +219,7 @@ LeanderMob.Spine.prototype.getLoop = function(params){
 /*** Retorna el numero (Integer) de loop que ha terminado una animacion 
  * params: objecto Track  (retortando por el metodo Play)
 ***/
-LeanderMob.Spine.prototype.getCountLoop = function(params){
+halloween.Spine.prototype.getCountLoop = function(params){
 
     return Math.floor( Number(params.trackTime).toFixed(20) / Number(params.animationEnd).toFixed(20) );
 };
