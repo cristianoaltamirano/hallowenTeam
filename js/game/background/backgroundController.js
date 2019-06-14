@@ -4,6 +4,7 @@ var background;
 var background2;
 var foreground;
 var foreground2;
+var BACKGROUND_WIDTH = 2743;
 
 halloween.BackgroundController = function( app ) {
     this.initBackground();
@@ -31,32 +32,32 @@ halloween.BackgroundController.prototype.launchTicker = function() {
         postition += 10;
 
         background.x = -(postition * 0.6);
-        background.x %= 2743 * 2;
+        background.x %= BACKGROUND_WIDTH * 2;
         if (background.x < 0) {
-            background.x += 2743 * 2;
+            background.x += BACKGROUND_WIDTH * 2;
         }
-        background.x -= 2743;
+        background.x -= BACKGROUND_WIDTH;
 
-        background2.x = -(postition * 0.6) + 2743;
-        background2.x %= 2743 * 2;
+        background2.x = -(postition * 0.6) + BACKGROUND_WIDTH;
+        background2.x %= BACKGROUND_WIDTH * 2;
         if (background2.x < 0) {
-            background2.x += 2743 * 2;
+            background2.x += BACKGROUND_WIDTH * 2;
         }
-        background2.x -= 2743;
+        background2.x -= BACKGROUND_WIDTH;
 
         foreground.x = -postition;
-        foreground.x %= 2743 * 2;
+        foreground.x %= BACKGROUND_WIDTH * 2;
         if (foreground.x < 0) {
-            foreground.x += 2743 * 2;
+            foreground.x += BACKGROUND_WIDTH * 2;
         }
-        foreground.x -= 2743;
+        foreground.x -= BACKGROUND_WIDTH;
 
-        foreground2.x = -postition + 2743;
-        foreground2.x %= 2743 * 2;
+        foreground2.x = -postition + BACKGROUND_WIDTH;
+        foreground2.x %= BACKGROUND_WIDTH * 2;
         if (foreground2.x < 0) {
-            foreground2.x += 2743 * 2;
+            foreground2.x += BACKGROUND_WIDTH * 2;
         }
-        foreground2.x -= 2743;
+        foreground2.x -= BACKGROUND_WIDTH;
     });
 };
 
