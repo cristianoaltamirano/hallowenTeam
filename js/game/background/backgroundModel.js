@@ -1,4 +1,4 @@
-var backgroundModel;
+var backgroundModel = backgroundModel || {};
 
 
 backgroundModel.initBackgroundController = function () {

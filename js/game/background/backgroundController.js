@@ -1,4 +1,4 @@
-var backgroundController;
+var backgroundController = backgroundController || {};
 
 
 backgroundController.initBackgroundController = function () {

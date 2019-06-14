@@ -2,13 +2,16 @@
  * Halloween Main
  * @type {Application}
  */
+
+var AppHallowen = AppHallowen || {};
+
 const app = new PIXI.Application();
 
-function initHalloweenApp() {
+AppHallowen.initHalloweenApp = function () {
     document.body.appendChild(app.view);
     app.stop();
-}
+};
 
-function AppHalloween() {
+AppHallowen.AppHalloween = function AppHalloween() {
     return app;
-}
+};

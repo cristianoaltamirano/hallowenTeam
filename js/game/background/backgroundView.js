@@ -1,4 +1,4 @@
-var backgroundView;
+var backgroundView = backgroundView || {};
 
 
 backgroundView.initBackgroundController = function () {
