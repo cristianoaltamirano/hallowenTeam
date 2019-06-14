@@ -1,0 +1,48 @@
+
+manos.png
+size: 162,78
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dedos_der
+  rotate: false
+  xy: 104, 42
+  size: 31, 34
+  orig: 31, 34
+  offset: 0, 0
+  index: -1
+dedos_izq
+  rotate: false
+  xy: 104, 6
+  size: 31, 34
+  orig: 31, 34
+  offset: 0, 0
+  index: -1
+mano_der
+  rotate: false
+  xy: 2, 2
+  size: 49, 74
+  orig: 50, 75
+  offset: 0, 1
+  index: -1
+mano_izq
+  rotate: false
+  xy: 53, 3
+  size: 49, 73
+  orig: 50, 74
+  offset: 0, 1
+  index: -1
+pulgar_der
+  rotate: false
+  xy: 137, 61
+  size: 23, 15
+  orig: 23, 15
+  offset: 0, 0
+  index: -1
+pulgar_izq
+  rotate: false
+  xy: 137, 44
+  size: 23, 15
+  orig: 23, 15
+  offset: 0, 0
+  index: -1

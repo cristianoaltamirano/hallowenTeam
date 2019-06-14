@@ -1,0 +1,129 @@
+{
+"skeleton": { "hash": "BIyZys+GouezQhRcTvFQLJ0FheU", "spine": "3.7.93", "width": 197, "height": 179 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "mano_izq", "parent": "root", "length": 85.6, "rotation": 93.62, "x": 60.22, "y": -166.1 },
+	{ "name": "bone2", "parent": "mano_izq", "length": 46.11, "rotation": 168.43, "x": 142.64, "y": 7.22 },
+	{ "name": "pulgar_izq", "parent": "mano_izq", "length": 43.63, "rotation": 105.43, "x": 101.01, "y": -44.27 },
+	{ "name": "mano_der", "parent": "root", "length": 93.88, "rotation": 92.7, "x": 152.53, "y": -174.45 },
+	{ "name": "bone5", "parent": "mano_der", "length": 35.03, "rotation": -123.94, "x": 102.93, "y": 35.46 },
+	{ "name": "bone6", "parent": "mano_der", "length": 42.27, "rotation": 174.64, "x": 128.97, "y": -16.89 },
+	{ "name": "tierra_izq", "parent": "root", "rotation": 93.62, "x": 48.93, "y": -165.61 },
+	{ "name": "tierra_der", "parent": "root", "rotation": 92.7, "x": 143.2, "y": -179.36 }
+],
+"slots": [
+	{ "name": "mano_izq", "bone": "mano_izq", "attachment": "mano_izq" },
+	{ "name": "dedos_izq", "bone": "bone2", "attachment": "dedos_izq" },
+	{ "name": "pulgar_izq", "bone": "pulgar_izq", "attachment": "pulgar_izq" },
+	{ "name": "mano_der", "bone": "mano_der", "attachment": "mano_der" },
+	{ "name": "dedos_der", "bone": "bone6", "attachment": "dedos_der" },
+	{ "name": "pulgar_der", "bone": "bone5", "attachment": "pulgar_der" }
+],
+"skins": {
+	"default": {
+		"dedos_der": {
+			"dedos_der": { "x": 18.72, "y": -0.46, "rotation": 92.66, "width": 68, "height": 73 }
+		},
+		"dedos_izq": {
+			"dedos_izq": { "x": 25.47, "y": 0.51, "rotation": 97.96, "width": 68, "height": 73 }
+		},
+		"mano_der": {
+			"mano_der": {
+				"type": "mesh",
+				"uvs": [ 1, 0.53704, 1, 0.80072, 1, 1, 0, 1, 0, 0.80678, 0, 0.56128, 0, 0, 1, 0 ],
+				"triangles": [ 2, 4, 1, 2, 3, 4, 6, 7, 0, 5, 6, 0, 5, 0, 1, 4, 5, 1 ],
+				"vertices": [ 1, 4, 55.15, -50.12, 1, 2, 4, 12.48, -48.11, 0.488, 8, 16.94, -57.66, 0.512, 1, 8, -15.3, -56.14, 1, 2, 4, -14.68, 61.29, 0.03135, 8, -10.22, 51.74, 0.96865, 2, 4, 16.58, 59.82, 0.27452, 8, 21.05, 50.27, 0.72548, 1, 4, 56.31, 57.95, 1, 1, 4, 147.14, 53.67, 1, 1, 4, 142.05, -54.21, 1 ],
+				"hull": 8
+			}
+		},
+		"mano_izq": {
+			"mano_izq": {
+				"type": "mesh",
+				"uvs": [ 1, 0.44099, 1, 0.76321, 1, 1, 0, 1, 0, 0.754, 0, 0.43792, 0, 0, 1, 0 ],
+				"triangles": [ 3, 1, 2, 3, 4, 1, 5, 6, 7, 5, 7, 0, 4, 5, 0, 4, 0, 1 ],
+				"vertices": [ 1, 1, 76.18, -55.69, 1, 2, 1, 24.73, -52.44, 0.392, 7, 23.52, -63.68, 0.608, 1, 7, -14.29, -61.29, 1, 1, 7, -7.47, 46.49, 1, 2, 1, 33.01, 55.25, 0.18722, 7, 31.81, 44.01, 0.81278, 1, 1, 83.48, 52.06, 1, 1, 1, 153.41, 47.64, 1, 1, 1, 146.6, -60.15, 1 ],
+				"hull": 8
+			}
+		},
+		"pulgar_der": {
+			"pulgar_der": { "x": 17.97, "y": -2.2, "rotation": 31.24, "width": 49, "height": 33 }
+		},
+		"pulgar_izq": {
+			"pulgar_izq": { "x": 22.96, "y": 0.54, "rotation": 160.95, "width": 49, "height": 33 }
+		}
+	}
+},
+"animations": {
+	"idle": {
+		"bones": {
+			"mano_izq": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 0,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.2,
+						"angle": 12.8,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.6, "angle": -9.55 },
+					{ "time": 0.9333, "angle": 0 }
+				]
+			},
+			"mano_der": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 0,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.6, "angle": -14.81 },
+					{ "time": 0.9333, "angle": 0 }
+				]
+			},
+			"bone6": {
+				"rotate": [
+					{ "time": 0.1333, "angle": 0 },
+					{ "time": 0.4667, "angle": 26.03 },
+					{ "time": 0.8, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0.1333, "x": 0, "y": 0 },
+					{ "time": 0.4667, "x": 11.78, "y": 1.04 },
+					{ "time": 0.8, "x": 0, "y": 0 }
+				]
+			},
+			"bone5": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.2667, "angle": 26.43 },
+					{ "time": 0.6, "angle": -14.31 },
+					{ "time": 0.8667, "angle": 0 }
+				]
+			},
+			"bone2": {
+				"rotate": [
+					{ "time": 0.2, "angle": 0 },
+					{ "time": 0.5333, "angle": -23.73 },
+					{ "time": 0.8667, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0.2, "x": 0, "y": 0 },
+					{ "time": 0.5333, "x": 7.64, "y": -3.92 },
+					{ "time": 0.8667, "x": 0, "y": 0 }
+				]
+			},
+			"pulgar_izq": {
+				"rotate": [
+					{ "time": 0.0667, "angle": 0 },
+					{ "time": 0.4, "angle": -26.15 },
+					{ "time": 0.7333, "angle": 14.4 },
+					{ "time": 0.9333, "angle": 0 }
+				]
+			}
+		}
+	}
+}
+}
