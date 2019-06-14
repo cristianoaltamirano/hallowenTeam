@@ -4,6 +4,7 @@
  */
 
 var halloween = halloween || {};
+var banderaElement = false;
 
 var app = new PIXI.Application();
 

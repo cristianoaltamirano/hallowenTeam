@@ -41,5 +41,11 @@ halloween.ElementsView.prototype.launchTicker = function() {
             fantasma.x += 2743 * 2;
         }
         fantasma.x -= 2743;
+        if(fantasma.x > 200 && fantasma.x < 387){
+            banderaElement = true;
+        }else{
+            banderaElement = false;
+        }
+        console.log(banderaElement)
     });
 };
