@@ -25,7 +25,7 @@ halloween.BackgroundController.prototype.initBackground = function() {
     foreground2.position.y = app.screen.height;
 
     container.addChild(background, background2, foreground, foreground2);
-    //container.width = app.screen.width;
+    //container.width = 500;
     container.height = 500;
     //app.start();
     this.launchTicker();

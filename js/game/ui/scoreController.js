@@ -22,7 +22,7 @@ halloween.ScoreController.prototype.initScore = function() {
     });
 
     var scoreText = new PIXI.Text('Score: 10000', style);
-    scoreText.x = 200;
+    scoreText.x = 100;
     scoreText.y = 50;
 
     app.stage.addChild(scoreText);
