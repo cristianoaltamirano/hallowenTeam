@@ -18,18 +18,24 @@ halloween.ElementsController.prototype.configElement = function(){
         .load(function(){
             that.initCharacter(arguments);
         });
-};
+}
 
 halloween.ElementsController.prototype.initCharacter = function(args) {
     var that = this;
+
     fantasma = new PIXI.spine.Spine( args[1].fantasma.spineData );
     app.stage.addChild(fantasma);
 
-    fantasma.x = 3000;
+    fantasma.x = app.renderer.width * 0.15;
     fantasma.y = app.renderer.height * 0.6;
 
     if(fantasma){
         this.view.initView( fantasma );
         this.view.animateIdle();
     }
+
+    // app.stage.on('click', function() {
+    //     that.view.animateSaltoAlto();
+    // });
+    // this.launchTicker();
 };
