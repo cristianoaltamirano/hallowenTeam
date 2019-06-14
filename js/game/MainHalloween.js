@@ -16,6 +16,7 @@ halloween.initHalloweenApp = function () {
 
 
     new halloween.characterController(app);
+    new halloween.BackgroundController(app);
 };
 
 halloween.AppHalloween = function AppHalloween() {
