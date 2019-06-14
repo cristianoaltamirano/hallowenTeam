@@ -1,0 +1,13 @@
+
+fantasma.png
+size: 94,95
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fantasma
+  rotate: false
+  xy: 2, 2
+  size: 90, 91
+  orig: 91, 91
+  offset: 0, 0
+  index: -1
