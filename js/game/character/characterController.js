@@ -1,14 +1,22 @@
 var halloween = halloween || {};
 
-halloween.characterController = function( app ) {
+halloween.CharacterController = function( app ) {
     
-    this.player = null;
-    PIXI.loader
-        .add('player', 'image/player/player.json')
-        .load(this.initCharacter); 
+    var that = this;
+    this.view = new halloween.CharacterView(app);
+    this.player = PIXI.loader.add('player', 'image/player/player.json')
+                             .load(function(){
+                                that.initCharacter(arguments);
+                             }); 
+
 }
 
-halloween.characterController.prototype.initCharacter = function(loader, res) {
-    this.player = new PIXI.spine.Spine(res.player.spineData );
-    app.stage.addChild(this.player);
+halloween.CharacterController.prototype.initCharacter = function(args) {
+    var player = new PIXI.spine.Spine( args[1].player.spineData );
+    app.stage.addChild(player);
+      if(player){
+        this.view.initView( player );
+        this.view.animateIdle();
+    }
+    
 };

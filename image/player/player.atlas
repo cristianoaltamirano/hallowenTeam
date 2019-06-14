@@ -1,40 +1,61 @@
 
 player.png
-size: 185,109
+size: 284,104
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-calabaza
+base
   rotate: false
-  xy: 97, 23
-  size: 86, 84
-  orig: 86, 84
+  xy: 97, 18
+  size: 92, 84
+  orig: 92, 84
   offset: 0, 0
   index: -1
-rueda_der
+cara_malo
   rotate: false
-  xy: 97, 8
+  xy: 191, 66
+  size: 67, 36
+  orig: 67, 36
+  offset: 0, 0
+  index: -1
+cara_muerto
+  rotate: false
+  xy: 191, 17
+  size: 49, 47
+  orig: 49, 47
+  offset: 0, 0
+  index: -1
+cara_normal
+  rotate: true
+  xy: 242, 13
+  size: 51, 40
+  orig: 51, 40
+  offset: 0, 0
+  index: -1
+rueda_a
+  rotate: false
+  xy: 260, 89
   size: 13, 13
   orig: 13, 13
   offset: 0, 0
   index: -1
-rueda_izq
+rueda_b
   rotate: false
-  xy: 112, 8
+  xy: 191, 2
   size: 13, 13
   orig: 13, 13
   offset: 0, 0
   index: -1
 skate
   rotate: false
-  xy: 2, 2
-  size: 86, 10
-  orig: 86, 10
+  xy: 97, 2
+  size: 92, 14
+  orig: 92, 14
   offset: 0, 0
   index: -1
 solid
   rotate: false
-  xy: 2, 14
+  xy: 2, 9
   size: 93, 93
   orig: 93, 93
   offset: 0, 0
